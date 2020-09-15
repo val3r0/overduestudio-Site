@@ -5,6 +5,10 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import {Helmet} from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
+    :root {
+      font-size: calc(1vw + 1vh + .5vmin);
+    }
+
     *, *:before, *:after {
         box-sizing: border-box;
     }
@@ -25,42 +29,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-width: 99vw;
-height: 100%;
+width: 100%;
+height: auto;
 display: flex;
 flex-direction: column;
-justify-content: center;
-
-/* Media Querry iPhone 5/6/7/8 (Portrait) */
-@media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      /* padding: 12vw; */
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait) {
-      /* padding: 12vw; */
-  }
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      /* padding: 12vw; */
-  }
-
-  /* Media Querry iPhone 5/6/7/8 (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      /* padding: 12vw; */
-  }  
 `
 const Menuwrapper = styled.div`
 width: 100%;
@@ -71,37 +43,6 @@ padding: 6vw;
 display: grid;
 grid-template: 1fr 3fr / auto;
 
-  /* Media Querry iPad_P_12.9(Portrait) */
-  @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      padding: 13vw;
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      padding: 13vw;
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      padding: 13vw;
-  }
-
-/* Media Querry iPhone_ALL (Portrait) */    
-@media only screen 
-    and (max-width : 414px)
-    and (min-width : 320px)
-    and (orientation: Portrait) {
-      padding: 13vw;
-  }
 `
 const Menulogo = styled.div`
 position: absolute;
@@ -116,144 +57,6 @@ grid-row: 1/2;
 grid-column: 1/2;
 z-index: 3;
 
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-  /* Media Querry iPad_P_12.9(Portrait) */
-  @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      svg { 
-        width: 33vw;
-      }
-  }
-
-   /* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-   @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      svg { 
-        width: 43vw;
-      }
-  }
-
-   /* Media Querry iPhone 6/7/8/SE2 (Portrait) */    
-   @media only screen 
-    and (max-width : 375px)
-    and (max-height : 667px)
-    and (orientation: Portrait) {
-      svg { 
-        width: 43vw;
-      }
-  }
-
-   /* Media Querry iPhone 5/SE (Portrait) */    
-   @media only screen 
-    and (max-width : 320px)
-    and (max-height : 568px)
-    and (orientation: Portrait) {
-      svg { 
-        width: 43vw;
-      }
-  }
-
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      svg { 
-        width: 43vw;
-      }
-
-  }
-
-  /* Media Querry iPhone X/XR/XS_Max (Horizontal) */
-   @media only screen 
-      and (min-width : 736px) 
-      and (max-width : 896px)
-      and (max-height: 414px)  {
-        svg { 
-        width: 33vw;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8_Plus (Horizontal) */
-   @media only screen 
-      and (min-width : 668px) 
-      and (max-width : 736px)
-      and (max-height: 414px)  {
-        svg { 
-        width: 33vw;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 569px) 
-      and (max-width : 667px)
-      and (max-height: 414px)  {
-        svg { 
-        width: 33vw;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 300px) 
-      and (max-width : 568px)
-      and (max-height: 414px)  {
-        svg { 
-        width: 33vw;
-      }
-    }
 `
 const Social = styled.div`
 top: 0;
@@ -277,196 +80,7 @@ svg {
   margin-bottom: 60px;
 }
 
-/* Laptop HiDPI */
-@media only screen 
-    and (min-width : 1280px) 
-    and (max-width : 1440px)
-    and (max-height : 900px)  {
-      margin-top: 16vw;
-      svg { 
-        width: 1.8vw;
-        height: 1.8vw;
-        margin-bottom: 50px;
-      }
-  }
 
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-  /* Media Querry iPad_P_12.9(Portrait) */
-  @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      margin-left: 66.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      margin-left: 66.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      margin-left: 66.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 30px;
-      }
-  }
-
-   /* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-   @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      margin: 20vw 0 0 63vw;
-      svg { 
-        width: 4vw;
-        height: 4vw;
-        margin-bottom: 20px;
-      }
-  }
-
-   /* Media Querry iPhone 6/7/8/SE2 (Portrait) */    
-   @media only screen 
-    and (max-width : 375px)
-    and (max-height : 667px)
-    and (orientation: Portrait) {
-      margin: 20vw 0 0 63vw;
-      svg { 
-        width: 4vw;
-        height: 4vw;
-        margin-bottom: 20px;
-      }
-  }
-
-   /* Media Querry iPhone 5/SE (Portrait) */    
-   @media only screen 
-    and (max-width : 320px)
-    and (max-height : 568px)
-    and (orientation: Portrait) {
-      margin: 20vw 0 0 63vw;
-      svg { 
-        width: 4vw;
-        height: 4vw;
-        margin-bottom: 20px;
-      }
-  }
-
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      margin: 20vw 0 0 63vw;
-      svg { 
-        width: 4vw;
-        height: 4vw;
-        margin-bottom: 20px;
-      }
-
-  }
-
-  /* Media Querry iPhone X/XR/XS_Max (Horizontal) */
-   @media only screen 
-      and (min-width : 736px) 
-      and (max-width : 896px)
-      and (max-height: 414px)  {
-        margin: 15vw 0 0 80.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8_Plus (Horizontal) */
-   @media only screen 
-      and (min-width : 668px) 
-      and (max-width : 736px)
-      and (max-height: 414px)  {
-        margin: 15vw 0 0 80.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 569px) 
-      and (max-width : 667px)
-      and (max-height: 414px)  {
-        margin: 15vw 0 0 80.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 300px) 
-      and (max-width : 568px)
-      and (max-height: 414px)  {
-        margin: 15vw 0 0 80.5vw;
-      svg { 
-        width: 2vw;
-        height: 2vw;
-        margin-bottom: 20px;
-      }
-    }
 `
 const Menudescription = styled.div`
 top: 20vw;
@@ -488,402 +102,49 @@ p {
   margin: 0;
 }
 
-/* TV FullHD */
-@media only screen 
-    and (min-width : 1450px) 
-    and (max-width : 1920px)
-    and (max-height : 1080px) {
-      top: 3vw;
-    }
-
-/* Laptop HiDPI */
-@media only screen 
-    and (min-width : 1280px) 
-    and (max-width : 1440px)
-    and (max-height : 900px)  {
-      top: 9vw;
-      font-size: 70px;
-  }
-
-  /* Laptop MDPI */
-@media only screen 
-    and (min-width : 1200px) 
-    and (max-width : 1280px)
-    and (max-height : 800px)  {
-      top: 6vw;
-  }
-
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-      top: 16vw;
-      font-size: 66px;
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-      top: 16vw;
-      font-size: 56px;
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-      top: 13vw;
-      font-size: 56px;
-  }
-
-    /* Media Querry iPad_P_12.9(Portrait) */
-    @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      top: 48vw;
-      font-size: 55px;
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      top: 49vw;
-      font-size: 43px;
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      top: 46vw;
-      font-size: 43px;
-  }
-
-   /* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-   @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      top: 42vw;
-      font-size: 30px;
-
-      a {
-        display: inline-block;
-        width: inherit;
-        word-wrap: break-word;
-      }
-  }
-
-   /* Media Querry iPhone 6/7/8/SE2 (Portrait) */    
-   @media only screen 
-    and (max-width : 375px)
-    and (max-height : 667px)
-    and (orientation: Portrait) {
-      top: 35vw;
-      font-size: 30px;
-
-      a {
-        display: inline-block;
-        width: inherit;
-        word-wrap: break-word;
-      }
-  }
-
-   /* Media Querry iPhone 5/SE (Portrait) */    
-   @media only screen 
-    and (max-width : 320px)
-    and (max-height : 568px)
-    and (orientation: Portrait) {
-      top: 35vw;
-      font-size: 25px;
-
-      a {
-        display: inline-block;
-        width: inherit;
-        word-wrap: break-word;
-      }
-  }
-
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      top: 46vw;
-      font-size: 36px;
-
-      a {
-        display: inline-block;
-        width: inherit;
-        word-wrap: break-word;
-      }
-
-  }
-
-  /* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-  @media only screen 
-    and (min-width: 500px)
-    and (max-width : 736px)
-    and (max-height : 414px)
-    and (orientation: Horizontal) {
-      top: 46vw;
-      font-size: 18px;
-    } 
-
-  /* Media Querry iPhone X/XR/XS_Max (Horizontal) */
-   @media only screen 
-      and (min-width : 736px) 
-      and (max-width : 896px)
-      and (max-height: 414px)  {
-      top: 9vw;
-      font-size: 30px;
-
-      a {
-        display: inline-block;
-        width: inherit;
-        word-wrap: break-word;
-      }
-    }
-
-    /* Media Querry iPhone 6/7/8_Plus (Horizontal) */
-   @media only screen 
-      and (min-width : 668px) 
-      and (max-width : 736px)
-      and (max-height: 414px)  {
-      top: 1vw;
-      font-size: 38px;
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 569px) 
-      and (max-width : 667px)
-      and (max-height: 414px)  {
-      top: 5vw;
-      font-size: 30px;
-    }
-
-    /* Media Querry iPhone 6/7/8 (Horizontal) */
-   @media only screen 
-      and (min-width : 300px) 
-      and (max-width : 568px)
-      and (max-height: 414px)  {
-      top: 3vw;
-      font-size: 27px;
-    }
-`
-
-const Leftdotwrapper = styled.div`
-margin: 0;
-display: grid;
-grid-template: repeat(3, auto) / auto;
-row-gap: 3vw;
-
-  /* TV FullHD */
-  @media only screen 
-    and (min-width : 1450px) 
-    and (max-width : 1920px)
-    and (max-height : 1080px) {
-      row-gap: 5vw;
-    }
-
- /* Media Querry Laptop-HiDPI */
- @media only screen 
-    and (min-width : 1280px) 
-    and (max-width : 1440px)
-    and (max-height : 900px)  {
-    row-gap: 8vw;
-  }
-
-  /* Media Querry iPad_P_12.9(Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-    row-gap: 14vw;
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-    row-gap: 14.5vw;
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-    row-gap: 14vw;
-  }
-
-  /* Media Querry iPhone X/XR/XS_Max (Horizontal) */
-  @media only screen 
-    and (min-width : 500px) 
-    and (max-width : 896px)  {
-    row-gap: 1.5vw;
-  }
-
-  /* Media Querry iPhone 6/7/8 Plus (Horizontal) */
-  @media only screen 
-    and (min-width : 500px) 
-    and (max-width : 736px)  {
-    row-gap: 5.5vw;
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait) {
-      row-gap: 13.5vw;
-  }
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      row-gap: 27vw;
-  }
-
-  /* Media Querry iPhone 5/6/7/8 (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      row-gap: 17.5vw;
-  }
 
 `
-const Dotwrapper = styled(Leftdotwrapper)`
-margin: 6vw;
 
-/* Media Querry iPhone 5/6/7/8 (Portrait) */
-@media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      margin: 13vw;
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait) {
-      margin: 13vw;
-  }
-
-  /* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      margin: 13vw;
-  }
-
-  /* Media Querry iPhone 5/6/7/8 (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      margin: 13vw;
-  }  
-
+const Dotwrapper = styled.div`
+height: 100vh;
+padding: 2em;
+display: flex;
+flex-direction: column;
 `
 
 const Linewrapper = styled.ul`
-width: auto;
-height: 100%;
-margin: 0;
-grid-row: 1/2;
 display: flex;
+margin:0 0 auto 0;
 flex-direction: row;
 justify-content: space-between;
+grid-row: 1/2;
 
-/* Media Querry iPhone/iPad (Portrait) */
-@media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait)  {
-    li:nth-child(1),li:nth-child(2) {
-      display: none;
-    }
-  }
-
+li:nth-child(1),li:nth-child(2) {
+  display: none;
+}
 `
 const Secondlinewrapper = styled(Linewrapper)`
-width:auto;
-margin: 0;
-grid-row: 2/3;
+margin: auto 0;
 `
-const Thirdlinewrapper = styled(Secondlinewrapper)`
-width:auto;
-margin: 0;
-grid-row: 3/4;
-
-/* Media Querry iPhone/iPad (Portrait) */
-@media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait) {
-      li:last-child {
-        svg {
-          display: none;
-        }
-      }
-    }
+const Thirdlinewrapper = styled(Linewrapper)`
+margin: auto 0;
 `
-const Forthlinewrapper = styled.div`
-display: none;
-grid-row: 3/4;
-
-/* Media Querry iPhone/iPad (Portrait) */
-@media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait)  {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      grid-row: 4/5;
-  }
+const Forthlinewrapper = styled(Linewrapper)`
+margin: auto 0;
 `
-
-const Fifthlinewrapper = styled.div`
-display: none;
-grid-row: 3/4;
-
-/* Media Querry iPhone/iPad (Portrait) */
-@media only screen 
-    and (max-width : 1024px)
-    and (orientation: Portrait)  {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    grid-row: 5/6;
-  }
+const Fifthlinewrapper = styled(Linewrapper)`
+margin: auto 0 0 0;
 `
 
 const Dot = styled.li`
-width: 11vw;
-height: 11vw;
+width: 19vw;
+height: 19vw;
 border-radius: 500px;
 background: #0000FF;
-
-/* Media Querry iPhone_ALL (Portrait) */    
-@media only screen 
-    and (max-width : 414px)
-    and (min-width : 320px)
-    and (orientation: Portrait) {
-      width: 16vw;
-      height: 16vw;
-  }  
 `
 const Menudot = styled.div`
-width: 11vw;
-height: 11vw;
+width: 19vw;
+height: 19vw;
 display: flex;
 position: relative;
 justify-content: center;
@@ -891,17 +152,10 @@ background-color: white;
 transition: transform 800ms ease-in-out;
 z-index: 1;
 
-@media only screen 
-    and (max-width : 414px)
-    and (min-width : 320px)
-    and (orientation: Portrait) {
-      width: 16vw;
-      height: 16vw;
-  }  
 `
 const Menubkg = styled.div`
-width: 11vw;
-height: 11vw;
+width: 19vw;
+height: 19vw;
 background-color: white;
 border-radius: 300px;
 border: solid 2px #0000FF;
@@ -910,20 +164,11 @@ transform: ${({div}) => (div ? "scale(100,100)" : "")};
 transition: transform 800ms ease-in-out;
 z-index: 2;
 
-@media only screen 
-    and (max-width : 414px)
-    and (min-width : 320px)
-    and (orientation: Portrait) {
-      width: 16vw;
-      height: 16vw;
-  }  
 `
-
 const Menubtn = styled(Menubkg)`
 top: 50%;
 transform: translatey(-50%);
 `
-
 const Cross = styled.div`
 top: 50%;
 position: absolute;
@@ -938,90 +183,7 @@ svg {
       cursor: pointer;
     }
 
-/* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-  @media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      svg {
-        width: 6vw;
-        height: 6vw;
-      }
-  }
 
-/* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      svg {
-        width: 6vw;
-        height: 6vw;
-      }
-  }  
-
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-    /* Media Querry iPad_P_12.9(Portrait) */
-    @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
 `
 
 const Arrodwot = styled(Dot)`
@@ -1032,456 +194,50 @@ svg {
   transform: translate(-50%,-50%);
   cursor: pointer;
 }
-
-/* Media Querry iPhone 6/7/8_Plus (Portrait) */    
-@media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      svg {
-        width: 6vw;
-        height: 6vw;
-      }
-  }
-
-/* Media Querry iPhone X/XS/XR_Max (Portrait) */
-  @media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      svg {
-        width: 6vw;
-        height: 6vw;
-      }
-  }  
-
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-    /* Media Querry iPad_P_12.9(Portrait) */
-    @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      svg {
-        width: 4vw;
-        height: 4vw;
-      }
-  }
 `
 
-const Description = styled.div`
-width: auto;
-height: auto;
+const Bottomwrapper = styled.div`
+width: 100vw;
 display: flex;
-margin: 6vw;
-flex-direction: row;
- 
-/* Media Querry iPhone 5/6/7/8 (Portrait) */    
-@media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-      flex-direction: column;
-      margin: 10vw;
-  }
-
-/* Media Querry iPhone X/XS/XR_Max (Portrait) */
-@media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      flex-direction: column;
-      margin: 13vw;
-  }
-
-  /* Media Querry iPad_P_12.9(Portrait) */
-  @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      flex-direction: column;
-      margin: 10vw;
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      flex-direction: column;
-      margin: 10vw;
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      flex-direction: column;
-      margin: 10vw;
-  }
+padding: 2em;
+flex-direction: column;
 `
 const Specialities= styled.p`
-width: 55vw;
+width: auto;
+margin: 0;
 font-family: 'DM Serif Display', serif;
-font-size: calc(53px + 2.7vw);
+font-size: 2.98rem;
 line-height: 122%;
-margin: 0 0 0 0;
 span {
   color: #0000FF; 
 }
 
-p:nth-child(2), p:nth-child(3){
-  width: auto;
-  margin-right: 15vw;
-  font-family: 'Noto Sans';
-  line-height: 175%;
-  font-size: calc(11px + 0.7vw);
+p:first-child {
+  margin: 0 0 1em 0;
 }
 
-p:nth-child(3) {
-  margin: 0 15vw 0 0;
-  }
+p:nth-child(2), p:nth-child(3){
+  width: auto;
+  margin: 2em 0;
+  font-family: 'Noto Sans';
+  line-height: 175%;
+  font-size: 1.1rem;
+}
 
-  /* TV FullHD */
-  @media only screen 
-    and (min-width : 1450px) 
-    and (max-width : 1920px)
-    and (max-height : 1080px)  {
-      width: 70vw;
-      font-size: calc(65px + 1.8vw);
-      p:nth-child(2) {
-        margin-top: 11vh;
-      }
-      p:nth-child(2), p:nth-child(3){
-        width: 60vw;
-      }   
-  }
-  
+p:nth-child(3){ 
+  margin-bottom: 2em;
+}
 
- /* Laptop HiDPI */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1440px)
-    and (max-height : 900px)  {
-      font-size: calc(52px + 2.5vw);
-      width: 72vw;
-  }
-
-   /* Laptop HiDPI */
-   @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1280px)
-    and (max-height : 900px)  {
-      font-size: 75px;
-      width: 72vw;
-  }
-
-  /* Media Querry iPad_P_12.9(Portrait) */
-  @media only screen 
-    and (min-width : 844px) 
-    and (max-width : 1024px)
-    and (orientation : Portrait)  {
-      font-size: 80px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: 22px;  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-  /* Media Querry iPad_P_10.5(Portrait) */
-  @media only screen 
-    and (min-width : 778px) 
-    and (max-width : 834px)  
-    and (orientation : Portrait) {
-      font-size: 58px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: 22px;  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-  /* Media Querry iPad (Portrait) */
-  @media only screen 
-    and (min-width : 700px) 
-    and (max-width : 768px)  
-    and (orientation : Portrait) {
-      font-size: 51.8px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: 22px;  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-  /* Media Querry iPad_P_12.9 (Horizontal) */
-  @media only screen 
-    and (min-width : 1290px) 
-    and (max-width : 1366px)
-    and (max-height : 1024px)  {
-      width: 78vw;
-      font-size: calc(65px + 1.8vw);
-      p:nth-child(2) {
-        margin-top: 11vh;
-      }
-      p:nth-child(2), p:nth-child(3){
-        width: 60vw;
-      }   
-  }
-
-  /* Media Querry iPad_P_10.5 (Horizontal) */
-  @media only screen 
-    and (min-width : 1034px) 
-    and (max-width : 1112px)
-    and (max-height : 834px)  {
-      width: 69vw;
-      font-size: calc(51px + 1.3vw);
-      p:nth-child(2) {
-        margin-top: 5vh;
-      }
-      p:nth-child(2), p:nth-child(3){
-        width: 60vw;
-      }   
-  }
-
-  /* Media Querry iPad (Horizontal) */
-  @media only screen 
-    and (min-width : 900px) 
-    and (max-width : 1024px)
-    and (max-height : 768px) {
-      width: 78vw;
-      font-size: calc(51px + 1.3vw);
-
-      p:first-child {
-        margin-top: 0;
-        font-size: 68px;
-      }
-
-      p:nth-child(2) {
-        margin-top: 4vh;
-        width: auto;
-      } 
-  }
-
-  /* Media Querry iPhone X/XR/XS_Max (Horizontal) */
-  @media only screen 
-  and (min-width : 500px) 
-  and (max-width : 896px)
-  and (max-height: 414px)  {
-    font-size: calc(19px + 2.5vh);
-    width: 120vh;
-    margin: 0;
-
-    p:nth-child(2){
-      margin-top: 8vh;
-    }
-
-    p:nth-child(2), p:nth-child(3){
-      font-size: calc(8px + 0.4vw);  
-    }
-  }
-
-  /* Media Querry iPhone 6/7/8 Plus (Portrait) */    
-@media only screen 
-    and (max-width : 414px)
-    and (max-height : 736px)
-    and (orientation: Portrait) {
-
-      font-size: 35px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: calc(10px + 1vw);  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-  /* Media Querry iPhone 6/7/8/SE2 (Portrait) */    
-  @media only screen 
-    and (max-width : 375px)
-    and (max-height : 667px)
-    and (orientation: Portrait) {
-      
-      font-size: 30px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: calc(10px + 1vw);  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-   /* Media Querry iPhone 5/SE (Portrait) */    
-   @media only screen 
-    and (max-width : 320px)
-    and (max-height : 568px)
-    and (orientation: Portrait) {
-      font-size: 22px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: calc(10px + 1vw);  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
-
-/* Media Querry iPhone X/XS/XR_Max (Portrait) */
-@media only screen 
-    and (max-width : 414px)
-    and (min-height : 812px)
-    and (orientation: Portrait) {
-      font-size: 40px;
-      width: auto;
-
-    P:first-child {
-      margin: 0;
-    }  
-      
-    p:nth-child(2), p:nth-child(3){
-      font-size: calc(10px + 1vw);  
-      width: auto;
-    }
-
-    p:nth-child(2){
-      margin: 13vw 0 0 0;
-    }
-
-    p:nth-child(3) {
-      margin: 8vw 0 8vw 0;
-    }
-  }
+@media screen and (min-height: 800px) {
+  p:nth-child(3){ 
+  margin-bottom: 0;
+}
+}
 `
 const Btnup = styled(Dot)`
+margin: auto 0 0 auto;
 background-color: white;
 border: solid 2px #0000FF;
-margin: auto 0 0 auto;
 svg {
   position: relative;
   left: 50%;
@@ -1577,34 +333,18 @@ function Home() {
             <Dot></Dot>
             <Dot></Dot>
             <Dot></Dot>
-            <Arrodwot onClick={ () => {scroll('#bottom')}}>
-            <svg width="4vw" height="4vw" viewBox="0 0 62 77" fill="none" stroke-width="8">
-                <g clipPath="url(#clip0)">
-                <path                  
-                  d="M.268 45.219l30.665 30.85 30.643-30.85-1.624-1.635-27.875 28.087V.119H29.79v71.552L1.89 43.584.268 45.22z"
-                  fill="#fff"
-                  stroke-width="8"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <path
-                    fill="#fff"
-                    transform="rotate(-180 30.788 38.034)"
-                    d="M0 0H61.3083V75.9491H0z"
-                    stroke-width="8"
-                  />
-                </clipPath>
-              </defs>      
-            </svg>
-            </Arrodwot>
+            <Dot></Dot>
           </Thirdlinewrapper>
           <Forthlinewrapper>
             <Dot></Dot>
             <Dot></Dot>
             <Dot></Dot>
+            <Dot></Dot>
+            <Dot></Dot>
           </Forthlinewrapper>
           <Fifthlinewrapper>
+            <Dot></Dot>
+            <Dot></Dot>
             <Dot></Dot>
             <Dot></Dot>
             <Arrodwot onClick={ () => {scroll('#bottom')}}>
@@ -1628,7 +368,7 @@ function Home() {
             </Arrodwot>
           </Fifthlinewrapper>
         </Dotwrapper>
-      <Description id="bottom">
+      <Bottomwrapper id="bottom">
         <Specialities>
           <p>
             Visual Design<span> / </span>
@@ -1647,7 +387,7 @@ function Home() {
             <path d="M61 31.2761L30.4886 0L0 31.2761L1.61544 32.9333L29.351 4.45802L29.351 77H31.6263L31.6263 4.45802L59.3846 32.9333L61 31.2761Z" fill="#0000FF"/>
           </svg>
         </Btnup>
-      </Description>
+      </Bottomwrapper>
     </Wrapper>
   )
 }
