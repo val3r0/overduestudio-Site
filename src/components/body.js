@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        overflow-y: ${({div}) => (div ? "hidden" : "auto")};
+        overflow-y: scroll;
         overflow-x: hidden;
     }
     li {
@@ -29,9 +29,12 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled.div`
 width: 100%;
 height: auto;
-position: absolute;
+
 display: flex;
 flex-direction: column;
+position: absolute;
+-ms-overflow-style: none;
+scrollbar-width: none;
 `
 
 const Menubkg = styled.div`
@@ -41,7 +44,7 @@ position: absolute;
 background: white;
 clip-path: ${({div}) => (div ? "circle(1000px at 50%)" : "circle(2px at 84% 8%)")};
 transition: height 800ms ease-in-out, clip-path 800ms ease-in-out;
-z-index: 3;
+z-index: 2;
 `
 
 
@@ -120,7 +123,66 @@ svg {
   margin-bottom: 1.5em;
 }
 
+@media screen 
+and (max-height: 750px)
+and (orientation: portrait) {
+  padding-top: 4em;
+}
 
+@media screen 
+and (min-height: 750px)
+and (orientation: portrait) {
+  padding-top: 4.5em;
+}
+
+@media screen /* ... Phone M/S */
+and (min-width: 500px) 
+and (orientation: landscape) {
+  padding-top: 2em;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+@media screen /* ... Phone XL/L */
+and (min-width: 800px) 
+and (orientation: landscape) {
+  padding-top: 1em;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+@media screen /* ... Tablet */
+and (min-width: 1000px) 
+and (orientation: landscape) {
+  padding-top: 2em;
+
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+  }
+}
+
+@media screen /* ... laptops */
+  and (min-width: 1000px) 
+  and (min-height: 800px) 
+  and (max-height: 900px) {
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+@media screen /* ... iMac */
+  and (min-width: 1920px) {
+    transform: ${({div}) => (div ? "translate(-90%, 1em)" : "translate(-90%, 0)")};
+}
 `
 const Menudescription = styled.div`
 width: 6.5em;
@@ -145,12 +207,19 @@ p {
 a {
   word-break: break-all;
 }
+
+@media screen /* ... Phone XL/L */
+and (min-width: 500px) 
+and (orientation: landscape) {
+  width: 12em;
+}
 `
 
 const Dotwrapper = styled.div`
 height: 100vh;
 padding: 2em;
 display: flex;
+background: white;
 flex-direction: column;
 `
 
@@ -164,15 +233,36 @@ grid-row: 1/2;
 li:nth-child(1),li:nth-child(2) {
   display: none;
 }
+
+@media only screen 
+and (min-width: 320px) 
+and (orientation: landscape) {
+  
+    li:nth-child(1),li:nth-child(2) {
+    display: block;
+  }
+}
 `
 const Secondlinewrapper = styled(Linewrapper)`
 margin: auto 0;
 `
 const Thirdlinewrapper = styled(Linewrapper)`
 margin: auto 0;
+
+@media only screen 
+and (min-width: 320px) 
+and (orientation: landscape) {
+  display: none;
+}
 `
 const Forthlinewrapper = styled(Linewrapper)`
 margin: auto 0;
+
+@media only screen 
+and (min-width: 320px) 
+and (orientation: landscape) {
+  display: none;
+}
 `
 const Fifthlinewrapper = styled(Linewrapper)`
 margin: auto 0 0 0;
@@ -183,6 +273,29 @@ width: 19vw;
 height: 19vw;
 border-radius: 500px;
 background: #0000FF;
+
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 800px)
+and (orientation: landscape) {
+  width: 11vw;
+  height: 11vw;
+}
+
+@media only screen 
+and (min-width: 800px) 
+and (max-width: 900px)
+and (orientation: landscape) {
+  width: 9vw;
+  height: 9vw;
+}
+
+@media only screen 
+and (min-width: 900px) 
+and (orientation: landscape) {
+  width: 12.5vw;
+  height: 12.5vw;
+}
 `
 const Menudot = styled(Dot)`
 display: flex;
@@ -199,7 +312,8 @@ top: 50%;
 left: 50%;
 position: absolute;
 z-index: 3;
-transform: translate(-50%, -35%);
+transform: translate(-50%, -45%);
+z-index: 9999;
 svg {
       transform: ${({div}) => (div ? "rotate(45deg)" : "")};
       transition: transform 400ms ease-in-out;
@@ -208,6 +322,14 @@ svg {
       width: auto;
       cursor: pointer;
     }
+
+@media screen and (min-width: 500px)
+and (orientation: landscape) {
+  svg {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+}
 `
 
 const Arrodwot = styled(Dot)`
@@ -218,13 +340,30 @@ svg {
   transform: translate(-50%,-50%);
   cursor: pointer;
 }
+
+@media screen and (min-width: 500px)
+and (orientation: landscape) {
+  svg {
+    width: 3vw;
+    height: 4vw;
+  }
+}
 `
 
 const Bottomwrapper = styled.div`
 width: 100vw;
 display: flex;
+position: ${({div}) => (div ? "fixed" : "initial")};
 padding: 2em;
 flex-direction: column;
+z-index: ${({div}) => (div ? "-1" : "0")};
+
+
+@media only screen 
+and (min-width: 320px)
+and (orientation: landscape) {
+  flex-direction: row;
+}
 `
 const Specialities= styled.p`
 width: auto;
@@ -252,10 +391,137 @@ p:nth-child(3){
   margin-bottom: 2em;
 }
 
-@media screen and (min-height: 800px) {
+@media screen and (min-width: 750px) {
+  font-size: 2.7rem;
+  width: 8em;
+
+    p:nth-child(2), p:nth-child(3){
+    width: 26em;
+    margin: 2em 0;
+    font-family: 'Noto Sans';
+    line-height: 175%;
+    font-size: 0.8rem;
+  }
+
   p:nth-child(3){ 
-  margin-bottom: 0;
+    margin-bottom: 3.3em;
+  }
 }
+
+@media screen 
+and (min-width: 300px)
+and (max-width: 450px)
+and (min-height: 800px) {
+    p:nth-child(3){ 
+    margin-bottom: 4em;
+  }
+}
+
+@media screen 
+and (min-width: 320px) 
+and (max-width: 850px)
+and (orientation: landscape) {
+  width: 16em;
+  font-size: 2.7rem;
+  
+  p:first-child {
+    margin-bottom: 2rem;
+  }
+
+  p:nth-child(2), p:nth-child(3) {
+    width: 39em;
+    margin: 1em 0;
+    font-size: 1rem;
+  }
+
+  p:nth-child(3) { 
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media screen
+and (min-width: 800px) 
+and (max-width: 900px)
+and (orientation: landscape) {
+  width: 16em;
+  font-size: 2.7rem;
+  
+  p:first-child {
+    margin-bottom: 2rem;
+  }
+
+  p:nth-child(2), p:nth-child(3) {
+    width: 39em;
+    margin: 1em 0;
+    font-size: 1rem;
+  }
+
+  p:nth-child(3) { 
+    margin-bottom: 0;
+  }
+}
+
+@media screen 
+and (min-width: 900px) 
+and (orientation: landscape) {
+  width: 12em;
+  font-size: 2.7rem;
+  
+  p:first-child {
+    margin-bottom: 2rem;
+  }
+
+  p:nth-child(2), p:nth-child(3) {
+    width: 39em;
+    margin: 1em 0;
+    font-size: 0.8rem;
+  }
+
+  p:nth-child(3) { 
+    margin-bottom: 9em;
+  }
+}
+
+@media screen 
+  and (min-width: 1280px) 
+  and (min-height: 800px) 
+  and (max-height: 900px) {
+    width: 12em;
+    font-size: 2.7rem;
+    
+    p:first-child {
+      margin-bottom: 2rem;
+    }
+
+    p:nth-child(2), p:nth-child(3) {
+      width: 39em;
+      margin: 1em 0;
+      font-size: 0.8rem;
+    }
+
+    p:nth-child(3) { 
+      margin-bottom: 5em;
+    }
+}
+
+@media screen 
+  and (min-width: 1920px) {
+    width: 12em;
+    font-size: 2.7rem;
+    
+    p:first-child {
+      margin-bottom: 2rem;
+    }
+
+    p:nth-child(2), p:nth-child(3) {
+      width: 39em;
+      margin: 1em 0;
+      font-size: 0.8rem;
+    }
+
+    p:nth-child(3) { 
+      margin-bottom: 1em;
+    }
 }
 `
 const Btnup = styled(Dot)`
@@ -268,6 +534,14 @@ svg {
   top: 50%;
   transform: translate(-50%,-50%);
   cursor: pointer;
+}
+
+@media screen and (min-width: 500px)
+and (orientation: landscape) {
+  svg {
+    width: 3vw;
+    height: 4vw;
+  }
 }
 `
 
@@ -341,7 +615,7 @@ function Home() {
             <Dot></Dot>
             <Menudot>
               <Cross div={div} onClick={ () => {close()}}>
-                  <svg width="3vw" height="3vw" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="5vw" height="5vw" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M43.9985 23.7921L0.0836566 23.7921" stroke="#0000FF" stroke-width="2"/>
                     <line x1="22.0366" y1="44.8396" x2="22.0366" y2="0.924721" stroke="#0000FF" stroke-width="2"/>
                   </svg>
@@ -375,7 +649,7 @@ function Home() {
             <Dot></Dot>
             <Dot></Dot>
             <Arrodwot onClick={ () => {scroll('#bottom')}}>
-            <svg width="4vw" height="4vw" viewBox="0 0 62 77" fill="none">
+            <svg width="6vw" height="7vw" viewBox="0 0 62 77" fill="none">
                 <g clipPath="url(#clip0)">
                 <path
                   d="M.268 45.219l30.665 30.85 30.643-30.85-1.624-1.635-27.875 28.087V.119H29.79v71.552L1.89 43.584.268 45.22z"
@@ -395,22 +669,21 @@ function Home() {
             </Arrodwot>
           </Fifthlinewrapper>
         </Dotwrapper>
-      <Bottomwrapper id="bottom">
+      <Bottomwrapper id="bottom" div={div}>
         <Specialities>
           <p>
             Visual Design<span> / </span>
             Graphic<span> - </span>Digital<span> / </span>
             Web Design<span> / </span>
             Brand Identity<span> / </span>
-            Exhibition<span> / </span>
-            Design<span> / </span>
+            Exhibition Design<span> / </span>
             Photography
           </p>
           <p>Overdue Studio is a visual design studio creating contemporary design solutions digitally and physically. We believe the user experience is the foundation of all design and we are eager to be shaped by all manner of visual arts, music, culture, colours and YOU.</p>
           <p>Parallel to our commissioned work, we design and sell socks to raise awareness for climate change.</p>
         </Specialities>
         <Btnup onClick={ () => {scroll('#top')}}>
-          <svg width="4vw" height="4vw" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="6vw" height="7vw" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M61 31.2761L30.4886 0L0 31.2761L1.61544 32.9333L29.351 4.45802L29.351 77H31.6263L31.6263 4.45802L59.3846 32.9333L61 31.2761Z" fill="#0000FF"/>
           </svg>
         </Btnup>
