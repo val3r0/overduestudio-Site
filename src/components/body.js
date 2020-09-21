@@ -245,15 +245,15 @@ and (orientation: landscape) {
 `
 const Secondlinewrapper = styled(Linewrapper)`
 margin: auto 0;
-`
-const Thirdlinewrapper = styled(Linewrapper)`
-margin: auto 0;
 
 @media only screen 
 and (min-width: 320px) 
 and (orientation: landscape) {
   display: none;
 }
+`
+const Thirdlinewrapper = styled(Linewrapper)`
+margin: auto 0;
 `
 const Forthlinewrapper = styled(Linewrapper)`
 margin: auto 0;
@@ -295,6 +295,16 @@ and (min-width: 900px)
 and (orientation: landscape) {
   width: 12.5vw;
   height: 12.5vw;
+}
+`
+const Dot_red = styled(Dot)`
+background: ${({div}) => (div ? "red" : "green")};
+
+button {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  z-index: 999;
 }
 `
 const Menudot = styled(Dot)`
@@ -632,7 +642,7 @@ function Home() {
           <Thirdlinewrapper>
             <Dot></Dot>
             <Dot></Dot>
-            <Dot></Dot>
+            <Dot_red></Dot_red>
             <Dot></Dot>
             <Dot></Dot>
           </Thirdlinewrapper>
