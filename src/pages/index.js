@@ -1,12 +1,22 @@
 import React from "react";
 
+import {Helmet} from "react-helmet";
+
 import Body from "../components/body";
 import SEO from "../components/seo";
+
 
 
 function App() {
     return (  
     <div>
+        <Helmet>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&display=swap"
+            rel="stylesheet"
+        />;
+        <meta lang="en"></meta>
+        </Helmet>
         <SEO 
         title="Overdue Studio"
         description="Overdue studio is a visual design studio creating thoughtful design digitally and physically."/>

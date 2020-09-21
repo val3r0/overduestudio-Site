@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {createGlobalStyle} from "styled-components";
 import styled from "styled-components";
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import {Helmet} from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -25,6 +24,20 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 `;
+
+const Skiplink = styled.a`
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+
+  a:focus {
+    top: 0;
+  }
+`
 
 const Wrapper = styled.div`
 width: 100%;
@@ -58,30 +71,60 @@ display: grid;
 grid-template: repeat(5, 19vw) / fit-content(40%) fit-content(40%) fit-content(40%);
 justify-content: space-between;
 
-li {
+span {
   visibility: hidden;
   background: lightcoral;
   z-index: 3000;
 }
 
-li:nth-child(1){
+span:nth-child(1){
     grid-row: 1/2;
     grid-column: 1/2;
   }
 
-  li:nth-child(2){
+  span:nth-child(2){
     position: relative;
     margin: 0 auto;
     grid-row: 1/2;
     grid-column: 2/3;
   }
 
-  li:nth-child(3){
+  span:nth-child(3){
     position: relative;
     grid-row: 1/2;
     grid-column: 3/4;
   }
 `
+const Dotmenu = styled.span`
+width: 19vw;
+height: 19vw;
+border-radius: 500px;
+background: #0000FF;
+
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 800px)
+and (orientation: landscape) {
+  width: 11vw;
+  height: 11vw;
+}
+
+@media only screen 
+and (min-width: 800px) 
+and (max-width: 900px)
+and (orientation: landscape) {
+  width: 9vw;
+  height: 9vw;
+}
+
+@media only screen 
+and (min-width: 900px) 
+and (orientation: landscape) {
+  width: 12.5vw;
+  height: 12.5vw;
+}
+`
+
 const Menulogo = styled.div`
 top: 0;
 left: 0;
@@ -553,19 +596,14 @@ function Home() {
 
   return (
     <div>
+    <Skiplink></Skiplink>
     <Wrapper id="top">
       <GlobalStyle div={div}/>
-      <Helmet>
-      <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&display=swap"
-        rel="stylesheet"
-      />;
-      </Helmet>
       <Menubkg div={div}></Menubkg>
       <Menuwrapper>
-        <Dot></Dot>
-        <Dot></Dot>
-        <Dot></Dot>
+        <Dotmenu></Dotmenu>
+        <Dotmenu></Dotmenu>
+        <Dotmenu></Dotmenu>
         <Menulogo div={div}>
           <svg viewBox="0 0 454 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M26.7093 43.161C28.9304 40.894 30.037 38.0588 30.037 34.6319C30.037 31.3303 28.9304 28.4853 26.7093 26.1144C24.4648 23.7808 21.789 22.6444 18.7482 22.6444C15.6548 22.6444 12.9809 23.7808 10.7579 26.0537C8.58173 28.3932 7.46339 31.2696 7.46339 34.6319C7.46339 37.8962 8.54269 40.7177 10.7579 43.0944C13.018 45.3947 15.684 46.5704 18.7482 46.5704C21.8339 46.5704 24.4668 45.4398 26.7093 43.161ZM32.0902 20.9966C35.6931 24.7546 37.4867 29.2867 37.4867 34.6319C37.4867 40.077 35.7165 44.5914 32.182 48.1967C30.3473 50.062 28.3527 51.4531 26.075 52.4015C23.8305 53.3048 21.4163 53.7397 18.7482 53.7397C13.3634 53.7397 8.93303 51.9077 5.36138 48.1967C1.79168 44.4386 0 39.9124 0 34.6319C0 29.1926 1.77216 24.6508 5.29307 20.9966C7.14135 19.1312 9.16334 17.7322 11.3864 16.8035C13.6367 15.9061 16.092 15.4613 18.7482 15.4613C24.1018 15.4593 28.5576 17.2874 32.0902 20.9966Z" fill="#0000FF"/>
