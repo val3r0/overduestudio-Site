@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import {Helmet} from "react-helmet";
 import {createGlobalStyle} from "styled-components";
 import styled from "styled-components";
 import scrollTo from 'gatsby-plugin-smoothscroll';
+
+
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -569,6 +572,15 @@ function Home() {
   return (
     <div>
     <Skiplink href="#bottom">skip</Skiplink>
+    <Helmet>
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&display=swap"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />;
+        <html lang="en" />
+    </Helmet>
     <Wrapper id="top">
       <GlobalStyle div={div}/>
       <Menubkg div={div}></Menubkg>
