@@ -33,6 +33,7 @@ const Skiplink = styled.a`
   color: white;
   padding: 8px;
   z-index: 100;
+  visibility: hidden;
 
   a:focus {
     top: 0;
@@ -567,7 +568,7 @@ function Home() {
 
   return (
     <div>
-    <Skiplink href="#bottom"></Skiplink>
+    <Skiplink href="#bottom">skip</Skiplink>
     <Wrapper id="top">
       <GlobalStyle div={div}/>
       <Menubkg div={div}></Menubkg>
