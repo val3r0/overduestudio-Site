@@ -12,10 +12,18 @@ function App() {
     <div>
         <Helmet>
         <link
+            rel="preload"
             href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&display=swap"
-            rel="stylesheet"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />;
-        <meta lang="en"></meta>
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&display=swap"
+                rel="stylesheet"
+                type="text/css"
+            />
+        </noscript>
         </Helmet>
         <SEO 
         title="Overdue Studio"
