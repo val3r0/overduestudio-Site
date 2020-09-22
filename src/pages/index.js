@@ -17,6 +17,7 @@ function App() {
             as="style"
             onload="this.onload=null;this.rel='stylesheet'"
         />;
+        <html lang="en" />
         </Helmet>
         <SEO 
         title="Overdue Studio"
