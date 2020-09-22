@@ -625,7 +625,7 @@ function Home() {
           </svg>
         </Social>
         <Menudescription div={div}>
-          <p>Sorry! <br/>We are still curating this site, be zen, and Since you’re here, say hello.</p>
+          <p>Sorry! <br/>We are still curating this site, be zen, and since you’re here, say hello.</p>
           <a href="mailto:info@overduestudio.co">info@overduestudio.co</a>
         </Menudescription>
       </Menuwrapper>
