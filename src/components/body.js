@@ -322,22 +322,16 @@ justify-content: center;
 background-color: white;
 border: solid 2px #0000FF;
 z-index: 3;
-`
 
-// Burger menu button ...
-const Cross = styled.div`
-top: 50%;
-left: 50%;
-position: absolute;
-z-index: 3;
-transform: translate(-50%, -45%);
-z-index: 9999;
 svg {
-      transform: ${({div}) => (div ? "rotate(45deg)" : "")};
-      transition: transform 400ms ease-in-out;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      position: absolute;
       background-color: white;
       border-radius: 500px;
-      width: auto;
+      transform: ${({div}) => (div ? "rotate(45deg), translate(-50%, -45%)" : "translate(-50%, -45%)")};
+      transition: transform 400ms ease-in-out;
       cursor: pointer;
     }
 
@@ -349,6 +343,16 @@ and (orientation: landscape) {
   }
 }
 `
+
+// Burger menu button ...
+// const Cross = styled.div`
+// top: 50%;
+// left: 50%;
+// position: absolute;
+// z-index: 3;
+// transform: translate(-50%, -45%);
+// z-index: 9999;
+// `
 
 const Arrodwot = styled(Dot)`
 svg {
@@ -636,12 +640,11 @@ function Home() {
             <Dot></Dot>
             <Dot></Dot>
             <Menudot>
-              <Cross div={div} onClick={ () => {close()}}>
-                  <svg width="5vw" height="5vw" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M43.9985 23.7921L0.0836566 23.7921" stroke="#0000FF" stroke-width="2"/>
-                    <line x1="22.0366" y1="44.8396" x2="22.0366" y2="0.924721" stroke="#0000FF" stroke-width="2"/>
-                  </svg>
-              </Cross>
+            <svg viewBox="0 0 224 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="111.636" cy="111.636" r="110.136" stroke="#0000FF" stroke-width="3"/>
+              <line x1="82" y1="110.5" x2="140.563" y2="110.5" stroke="#0000FF" stroke-width="3"/>
+              <line x1="112.5" y1="83" x2="112.5" y2="141.563" stroke="#0000FF" stroke-width="3"/>
+            </svg>
             </Menudot>
           </Linewrapper>
           <Secondlinewrapper>
