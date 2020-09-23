@@ -322,6 +322,7 @@ justify-content: center;
 background-color: white;
 border: solid 2px #0000FF;
 z-index: 3;
+cursor: pointer;
 `
 
 // Burger menu button ...
@@ -332,13 +333,13 @@ position: absolute;
 z-index: 3;
 transform: translate(-50%, -45%);
 z-index: 9999;
+cursor: pointer;
 svg {
       transform: ${({div}) => (div ? "rotate(45deg)" : "")};
       transition: transform 400ms ease-in-out;
       background-color: white;
       border-radius: 500px;
       width: auto;
-      cursor: pointer;
     }
 
 @media screen and (min-width: 500px)
@@ -351,16 +352,18 @@ and (orientation: landscape) {
 `
 
 const Arrodwot = styled(Dot)`
+cursor: pointer;
+z-index: 3;
 svg {
   position: relative;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  cursor: pointer;
 }
 
 @media screen and (min-width: 500px)
 and (orientation: landscape) {
+  cursor: pointer;
   svg {
     width: 3vw;
     height: 4vw;
@@ -546,6 +549,8 @@ const Btnup = styled(Dot)`
 margin: auto 0 0 auto;
 background-color: white;
 border: solid 2px #0000FF;
+z-index: 3;
+cursor: pointer;
 svg {
   position: relative;
   left: 50%;
@@ -635,8 +640,8 @@ function Home() {
             <Dot></Dot>
             <Dot></Dot>
             <Dot></Dot>
-            <Menudot>
-              <Cross div={div} onClick={ () => {close()}}>
+            <Menudot div={div} onClick={ () => {close()}}>
+              <Cross>
                   <svg width="5vw" height="5vw" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M43.9985 23.7921L0.0836566 23.7921" stroke="#0000FF" stroke-width="2"/>
                     <line x1="22.0366" y1="44.8396" x2="22.0366" y2="0.924721" stroke="#0000FF" stroke-width="2"/>
