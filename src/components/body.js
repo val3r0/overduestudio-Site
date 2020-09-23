@@ -353,7 +353,7 @@ and (orientation: landscape) {
 
 const Arrodwot = styled(Dot)`
 cursor: pointer;
-z-index: 3;
+z-index: 1;
 svg {
   position: relative;
   left: 50%;
@@ -549,7 +549,7 @@ const Btnup = styled(Dot)`
 margin: auto 0 0 auto;
 background-color: white;
 border: solid 2px #0000FF;
-z-index: 3;
+z-index: 2;
 cursor: pointer;
 svg {
   position: relative;
